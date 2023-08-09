@@ -1,0 +1,163 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reff Jadwal Dokter</title>
+<!-- Bootstrap -->
+
+
+<link rel="stylesheet" href="{#constant#}assets/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="{#constant#}assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="{#constant#}assets/sweetalert/sweetalert.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
+<!-- JQuery and Bootstrap Scripts Loading -->
+<script src="{#constant#}assets/jQuery/jquery-3.5.1.js"></script>
+<script src="{#constant#}assets/bootstrap/js/bootstrap.js"></script>
+<script src="{#constant#}assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="{#constant#}assets/sweetalert/sweetalert.min.js"></script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="topmenu1">
+    <a class="navbar-brand" href="{#constant#}">Cepjeff - Suyoto</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-item nav-link" href="{#constant#}antrean/jadwaldokter">Jadwal Dokter </a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/ambilantrian" >Tambah Antrean </a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/ambilantrianfarmasi">Tambah Antrean Farmasi </a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/updateadminis">Update Admisi</a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/updateantreanpoli">Update Poli</a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/updateantreanfarmasi">Update Farmasi</a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/getlistid">Get Task ID</a>
+          <a class="nav-item nav-link" href="{#constant#}antrean/nonbpjs">Non BPJS</a>
+      </div>
+    </div>
+</nav>
+
+<body>
+    <div style="padding-top:40px;color:#7209b7;font-size:32px;">REFERENSI JADWAL DOKTER BPJS</div>
+    
+    <div class="input-group mb-3">
+  
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Masukan Kode Poli</span>
+        </div>
+        <select  class="form-control" id="kodepoliref" aria-describedby="basic-addon3">
+            {loop="$res_poli['response']" as $poli}
+            <option value="{$poli['kdsubspesialis']}">{$poli['nmpoli']} - {$poli['nmsubspesialis']}</option>
+            {/loop}
+        </select>
+        
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Masukan Tanggal</span>
+        </div>
+        <input type="date" class="form-control" id="tanggalref" aria-describedby="basic-addon3">
+    </div>
+   
+
+    <div>
+        <div class="row justify-content-center">
+            <div class="col-4"></div>
+            <div class="col-4"><button class="btn btn-primary float-right" id="btnjadwal">Cari Jadwal</button></div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <div class="mt-4" id="tabeldetailjadwal"></div>
+    
+</body>
+<script>
+    /*-----------------------------------------
+Created by  : Ary H 
+Project     : BPJS -Antrean Online
+Date        : May 4, 2023
+-----------------------------------------*/
+
+//main
+$(document).ready(function () {
+        $("#tabeldetailjadwal").hide();
+        $("#btnjadwal").click(function(){
+            var kodepoli = $("#kodepoliref").val();
+            var tanggal = $('#tanggalref').val();
+            console.log(kodepoli + ' '+tanggal);
+          $.ajax({
+                type: "POST",
+                url: "{#constant#}antrean/jadwaldokter",
+                data: "poli="+ kodepoli+"&tanggal="+tanggal,
+                success: function (response) {
+                    console.log(response);
+                    $("#tabeldetailjadwal").html("");
+                    $("#tabeldetailjadwal").html(response);
+                    $("#tabeldetailjadwal").show();
+                }
+            });
+        })
+
+        $("#btnnama").click(function(){
+            var nama = $("#namadiag").val();
+          $.ajax({
+                type: "POST",
+                url: "../assets/scripts/ajax/diagnosa.php",
+                data: "nama="+ nama+"status=nama" ,
+                
+                success: function (response) {
+                    console.log(response);
+                    $("#tabeldetailjadwal").html("");
+                    $("#tabeldetailjadwal").html(response);
+                    $("#tabeldetailjadwal").show();
+                }
+            });
+        })
+
+    //     $("#allbtn").click(function(){
+      
+    //       $.ajax({
+    //         type: "POST",
+    //         url: "/assets/scripts/ajax/getnotifaccr.php",
+    //         data: "_date=all",
+    //         success: function (response) {
+             
+    //           if(response=='NotFound'){
+    //             $("#accrnotif").hide();
+    //           }else{
+    //             $("#accrnotif").html("");
+    //             $("#accrnotif").html(response);
+                
+    //             $("#accrnotif").show();
+    //           }
+    //         }
+    //     });
+    //     })
+
+    // $("#refreshbtn").click(function(){
+      
+    //   var _date = $('#_date').val();
+    //   console.log(_date);
+    //   $.ajax({
+    //     type: "POST",
+    //     url: "/assets/scripts/ajax/getnotifaccr.php",
+    //     data: "_date="+_date,
+    //     success: function (response) {
+         
+    //       if(response=='NotFound'){
+    //         $("#accrnotif").hide();
+    //       }else{
+    //         $("#accrnotif").html("");
+    //         $("#accrnotif").html(response);
+            
+    //         $("#accrnotif").show();
+    //       }
+    //     }
+    // });
+    // })
+});
+
+</script>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Intro</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Antrean Poli RS dr. Suyoto" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?php echo constant; ?>assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/pages/css/pricing.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="<?php echo constant; ?>assets/layouts/layout3/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/layouts/layout3/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="<?php echo constant; ?>assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <!-- END THEME LAYOUT STYLES -->
+        <style>
+                .disp_view{
+                    display:none;
+                }
+            .page-wrapper .page-wrapper-middle{
+                background:url('<?php echo constant; ?>assets/images/bg1.jpg') no-repeat!important;
+                background-size:cover!important;
+                background-position:left top!important;
+            }
+            @media print{
+                @page { margin: 0cm!important;size:72mm 64mm!important; }
+                body{
+                    height:90%; 
+                    margin: 0 !important; 
+                    padding: 0 !important;
+                    overflow: hidden;
+                }
+                .disp_view{
+                    display:block;
+                    width:68mm;
+                    height:60mm;
+                    margin:2mm;
+                    text-align:center;
+                    padding:1mm;
+                    position:relative;
+                }
+                .fix-bottom{
+                    bottom:0;
+                    left:27%;
+                    position:absolute;
+                    font-size:14px!important;
+                }
+                .hidden-print{
+                    display:none;
+                    visibility:hidden;
+                }
+                small{
+                    font-size:12px!important;
+                    margin:0!important;
+                }
+                .h3_bros{
+                    margin:0;
+                    font-size:20px!important;
+                }
+                .v_antrean{
+                    font-size:60px!important;
+                }
+            }
+        </style>
+		</head>
+    <!-- END HEAD -->
+
+    <body class="page-container-bg-solid page-md">
+        <div class="page-wrapper hidden-print">
+            <div class="page-wrapper-row hidden-print">
+                <div class="page-wrapper-top hidden-print">
+                    <!-- BEGIN HEADER -->
+                    <div class="page-header hidden-print">
+                        <!-- BEGIN HEADER TOP -->
+                        <!-- <div class="page-header-top"> -->
+                            <div class="container-fluid hidden-print">
+                                <div class="page-logo hidden-print">
+                        			<img src="<?php echo constant; ?>assets/images/logo-ekstras.png" style="height:50px;margin:15px 0!important;" alt="logo" class="logo-default hidden-print" /><div class="pull-right">
+                                        <div class="clock">
+                                            <!-- <div id="Date"></div> -->
+                                            <ul>
+                                                <li id="Date"></li>
+                                                <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                                                <li id="hours"> </li>
+                                                <li id="point">:</li>
+                                                <li id="min"> </li>
+                                                <li id="point">:</li>
+                                                <li id="sec"> </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+						<!-- </div> -->
+					</div>
+				</div>
+			</div>
+            <div class="page-wrapper-row full-height hidden-print">
+                <div class="page-wrapper-middle hidden-print">
+                    <!-- BEGIN CONTAINER -->
+                    <div class="page-container hidden-print">
+                        <!-- BEGIN CONTENT -->
+                        <div class="page-content-wrapper hidden-print">
+                            <div class="page-content hidden-print">
+                                <div class="container-fluid hidden-print">
+                                    <!-- BEGIN PAGE CONTENT INNER -->
+                                    <div class="page-content-inner hidden-print">
+                                        <div class="portlet box portlet-fit blue-soft " style="margin-top:20px;">
+											<div class="hidden-print portlet-title text-center">
+                                                <!-- <div class="action">
+                                                </div> -->
+											</div>
+											<div class="hidden-print portlet-body block5 text-center">
+                                                <p>&nbsp;</p>
+                                                <div class="row">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-4">
+                                                        <!-- <a href="<?php //echo base_url('halaman/show/pendaftaran'); ?>" class="btn btn-lg btn-block purple"><br><p><h1><strong>Pendaftaran</strong></h1></p><br></a> -->
+                                                        <a href="#" onclick="cetak_antrean('99')" class="btn btn-lg btn-block btn-outline purple hidden-print"><br><p><h1><strong>Pasien Baru</strong></h1></p><br></a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="<?php echo constant; ?>halaman/show/check_nik" class="btn btn-lg btn-block blue-steel"><br><p><h1><strong>Pasien Lama</strong></h1></p><br></a>
+                                                    </div>
+                                                </div>
+                                                <p>&nbsp;</p>
+                                                <div class="row">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-4">
+                                                        <a href="<?php echo constant; ?>anjungan/check_in_bpjs" class="btn btn-lg btn-block green-haze"><br><p><h1><strong>Check In BPJS</strong></h1></p><br></a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="<?php echo constant; ?>'halaman/show/cetak_sep" class="btn btn-lg btn-block green-meadow"><br><p><h1><strong>Cetak SEP</strong></h1></p><br></a>
+                                                    </div>
+                                                </div>
+                                                <p>&nbsp;</p>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="<?php echo constant; ?>halaman/show/reprint_antrean" class="btn btn-lg btn-block blue-sharp"><br><p><h1><strong>Reprint Antrian</strong></h1></p><br></a>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <!-- <a href="<?php //echo base_url('halaman/show/batalkan_antrean'); ?>" class="btn btn-lg btn-block red-haze"><br><p><h1><strong>Batalkan Antrean</strong></h1></p><br></a> -->
+                                                    </div>
+                                                </div>
+                                                <p>&nbsp;</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+                    <div class="page-footer hidden-print">
+                        <div class="container-fluid hidden-print"> 
+							
+                        </div>
+                    </div>
+		</div>
+        <div class="disp_view">
+            <!-- <div class="text_view"> -->
+                <div class="h3_bros">Antrean Pendaftaran<br><strong>RS dr. Suyoto</strong></div>
+                <small><?php echo date('Y-m-d H:i:s'); ?></small>
+                <h3 class="v_antrean sbold"></h3>
+                <div class="fix-bottom">Mohon Menunggu<br>Terima Kasih</div>
+            <!-- </div> -->
+        </div>
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="<?php echo constant; ?>assets/pages/scripts/components-bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
+	</body>
+</html>
+<script>
+    // var csrfName = '<?php //echo $this->security->get_csrf_token_name(); ?>';
+    // var csrfHash = '<?php //echo $this->security->get_csrf_hash(); ?>';
+    // $.ajax({
+    //     type: "POST",
+    //     url: '<?php echo constant; ?>halaman/get_queue_pendaftaran',
+    //     data: {[csrfName]:csrfHash},
+    //     success: function(text) {
+    //         if(text){
+    //             if(text.v_99){ $('.v_99').html(text.v_99); }
+    //             // if(text.v_2){ $('.v_2').html(text.v_2); }
+    //             // if(text.v_3){ $('.v_3').html(text.v_3); }
+    //         }
+    //     }
+    // });
+    // function cetak_antrean(id){
+    //     $('div.block5').block({
+    //         message: '<img src="<?php echo constant; ?>assets/images/loader.gif" width="200px" />',
+    //         css: {
+    //             border: '1px solid #fff'
+    //         }
+    //     });	
+    //     $.ajax({
+    //         type: "POST",
+    //         url: '<?php echo constant; ?>halaman/generate_queue_pendaftaran',
+    //         data: {[csrfName]:csrfHash,'kategori':id},
+    //         success: function(text) {
+    //             $('div.block5').unblock();
+    //             if(text.code){
+    //                 $('.v_'+text.values.kategori_id).html(text.values.no_antrean_prefix+' '+text.values.no_antrean_clearance);
+    //                 $('.v_antrean').html(text.values.no_antrean_prefix+' '+text.values.no_antrean_clearance);
+    //                 window.print();
+    //             }
+    //         },
+    //         error:function(e){   
+    //             $('div.block5').unblock();                 
+    //             setTimeout(function(){ swal('Error!','Fitur belum tersedia','error');},500);
+    //         }
+    //     });
+    // }
+</script>
+                                <!-- END LOGO -->

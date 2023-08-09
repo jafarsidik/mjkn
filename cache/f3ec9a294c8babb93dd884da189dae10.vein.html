@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Check In BPJS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Antrean Poli RS dr. Suyoto" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="<?php echo constant; ?>assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/pages/css/pricing.min.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="<?php echo constant; ?>assets/layouts/layout3/css/layout.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo constant; ?>assets/layouts/layout3/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="<?php echo constant; ?>assets/layouts/layout3/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="<?php echo constant; ?>assets/global/plugins/softkey-master/softkeys-0.0.1.css">
+        <!-- END THEME LAYOUT STYLES -->
+        <style>
+                .disp_view{
+                    display:none;
+                }
+            .page-wrapper .page-wrapper-middle{
+                background:url('<?php echo constant; ?>assets/images/bg1.jpg') no-repeat!important;
+                background-size:cover!important;
+                background-position:left top!important;
+            }
+            #my_camera{
+                margin:0 auto;
+            }
+            @media print{
+                @page { margin: 0cm!important;size:72mm 120mm!important; }
+                body{
+                    height:90%; 
+                    margin: 0 !important; 
+                    padding: 0 !important;
+                    overflow: hidden;
+                }
+                .disp_view{
+                    display:block;
+                    width:68mm;
+                    height:96mm;
+                    margin:2mm;
+                    text-align:center;
+                    padding:1mm;
+                    position:relative;
+                }
+                .v_qr{
+                    display:block!important;
+                }
+                .fix-bottom{
+                    bottom:0;
+                    left:30%;
+                    position:absolute;
+                    font-size:10px!important;
+                }
+                .hidden-print{
+                    display:none;
+                    visibility:hidden;
+                }
+                small{
+                    font-size:12px!important;
+                    margin:0!important;
+                }
+                .h3_bros{
+                    margin:0;
+                    font-size:20px!important;
+                }
+                .v_antrean{
+                    font-size:60px!important;
+                    margin-top:5px;
+                }
+                .qr_d{
+                    display:block;
+                    width:100%;
+                    text-align:center!important;
+                }
+                .v_qr{
+                    margin: 0 auto;
+                }
+                .v_poli,.v_dokter{
+                    font-size:14px!important;
+                }
+            }
+                .form-control{
+                    height: 50px!important;
+                    font-size: 2em!important;
+                }
+        </style>
+		</head>
+    <!-- END HEAD -->
+
+    <body class="page-container-bg-solid page-md">
+        <div class="page-wrapper hidden-print">
+            <div class="page-wrapper-row hidden-print">
+                <div class="page-wrapper-top hidden-print">
+                    <!-- BEGIN HEADER -->
+                    <div class="page-header hidden-print">
+                        <!-- BEGIN HEADER TOP -->
+                        <!-- <div class="page-header-top"> -->
+                            <div class="container-fluid hidden-print">
+                                <div class="page-logo hidden-print">
+                        			<img src="<?php echo constant; ?>assets/images/logo-ekstras.png" style="height:50px;margin:15px 0!important;" alt="logo" class="logo-default hidden-print" /><div class="pull-right">
+                                        <div class="clock">
+                                            <!-- <div id="Date"></div> -->
+                                            <ul>
+                                                <li id="Date"></li>
+                                                <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                                                <li id="hours"> </li>
+                                                <li id="point">:</li>
+                                                <li id="min"> </li>
+                                                <li id="point">:</li>
+                                                <li id="sec"> </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+						<!-- </div> -->
+					</div>
+				</div>
+			</div>
+            <div class="page-wrapper-row full-height hidden-print">
+                <div class="page-wrapper-middle hidden-print">
+                    <!-- BEGIN CONTAINER -->
+                    <div class="page-container hidden-print">
+                        <!-- BEGIN CONTENT -->
+                        <div class="page-content-wrapper hidden-print">
+                            <div class="page-content hidden-print">
+                                <div class="container-fluid hidden-print">
+                                    <!-- BEGIN PAGE CONTENT INNER -->
+                                    <div class="page-content-inner hidden-print">
+                                        <div class="portlet box portlet-fit blue-soft " style="margin-top:20px;">
+											<div class="hidden-print portlet-title text-center">
+												<div class="captions sbold hidden-print"><h2><strong>Check In BPJS</strong></h2></div>
+                                                <div class="actions pull-left">
+                                                    <a href="<?php echo constant; ?>anjungan" class="btn white"><i class="fa fa-home"></i> Halaman Utama</a>
+                                                </div>
+											</div>
+											<div class="hidden-print portlet-body block5 text-center">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-md-offset-3">
+                                                        
+                                                        <div class="form-body">
+                                                            <div class="form-group row">
+                                                                <div class="col-md-12 text-left">
+                                                                    <h2>Kode Booking</h2>
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                                <div class="col-md-8 text-left">
+                                                                    <input type="text" class="form-control" autofocus name="kode_booking" autocomplete="off">
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input type="submit" class="btn btn-block btn-lg yellow" name="act" id="btn_check_nik" value="Cetak">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <div class="softkeys" data-target="input[name='kode_booking']"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+                    <div class="page-footer hidden-print">
+                        <div class="container-fluid hidden-print"> 
+							
+                        </div>
+                    </div>
+		</div>
+        <div class="disp_view">
+                <div class="h3_bros">Antrean<br><strong>RS dr. Suyoto</strong></div>
+                <strong><span class="v_poli"></span></strong><br>
+                <strong><span class="v_dokter"></span></strong>
+                <h3 class="v_antrean sbold"></h3>
+                <div class="qr_d"><img class="v_qr" width="50%" /></div>
+                <small><strong><span class="v_kode_booking"></span></strong></small><br>
+                <div class="fix-bottom">
+                    Harap Menunggu<br>Terima Kasih<br>
+                    <?php echo date('Y-m-d H:i:s'); ?>
+                </div>
+        </div>
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="<?php echo constant; ?>assets/pages/scripts/components-bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js" type="text/javascript"></script>
+        <script src="<?php echo constant; ?>assets/global/plugins/softkey-master/softkeys-0.0.1.js"></script>
+	</body>
+</html>
+<script>
+    var csrfName = '';
+    var csrfHash = '';
+    $(document).ready(function() { 
+                $('.softkeys').softkeys({
+                    target : $('.softkeys').data('target'),
+                    layout : [
+                        [
+                            ['`','~'],
+                            ['1','!'],
+                            ['2','@'],
+                            ['3','#'],
+                            ['4','$'],
+                            ['5','%'],
+                            ['6','^'],
+                            ['7','&amp;'],
+                            ['8','*'],
+                            ['9','('],
+                            ['0',')'],
+                            ['-', '_'],
+                            ['=','+'],
+                            'delete'
+                        ],
+                        [
+                            'q','w','e','r','t','y','u','i','o','p',
+                            ['[','{'],
+                            [']','}']
+                        ],
+                        [
+                            'capslock',
+                            'a','s','d','f','g','h','j','k','l',
+                            [';',':'],
+                            ["'",'&quot;'],
+                            ['\\','|']
+                        ],
+                        [
+                            'shift',
+                            'z','x','c','v','b','n','m',
+                            [',','&lt;'],
+                            ['.','&gt;'],
+                            ['/','?'],
+                            ['@']
+                        ]
+                    ]
+                });
+        $('#checkForm').on('submit', function (event) {
+            if (event.isDefaultPrevented()) {
+            //alert("false");
+            } else {
+                event.preventDefault();
+                $('div.block5').block({
+                    message: '<img src="<?php echo constant; ?>assets/images/loader.gif" width="200px" />',
+                    css: {
+                        border: '1px solid #fff'
+                    }
+                });	 
+                var form = $('#checkForm');
+                var formData = new FormData(form[0]);
+                $.ajax({
+                    type: "POST",
+                    url: '<?php echo constant; ?>halaman/checkin',
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function(text) {
+                        $('div.block5').unblock();  
+                        if(text.code=='00'){
+                            $('.v_qr').attr('src',text.url_qr);
+                            $('.v_poli').html(text.ops.NamaPoli);
+                            $('.v_dokter').html(text.dokter);
+                            $('.v_antrean').html(text.ops.KodeAntrian+''+text.ops.NoUrutan);
+                            $('.v_kode_booking').html(text.ops.KodeBooking);
+                            setTimeout(function(){ window.print();},1000);
+                            setTimeout(function(){ location.reload();},10000);
+                        }else{
+                            setTimeout(function(){ swal('Error!',text.message,'error');},500);
+                        }
+                    },
+                    error:function(e){   
+                        $('div.block5').unblock();                 
+                        setTimeout(function(){ swal('Error!','Internal Server Error','error');},500);
+                    }
+                });
+            }
+        });
+    });
+    function checkIn(){
+        $('div.block5').block({
+            message: '<img src="<?php echo constant; ?>assets/images/loader.gif" width="200px" />',
+            css: {
+                border: '1px solid #fff'
+            }
+        });	
+        var bros;
+    }
+</script>
+                                <!-- END LOGO -->

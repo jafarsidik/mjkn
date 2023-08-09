@@ -1,0 +1,375 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ambil Antrean</title>
+<!-- Bootstrap -->
+
+
+<link rel="stylesheet" href="<?php echo constant; ?>assets/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="<?php echo constant; ?>assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo constant; ?>assets/sweetalert/sweetalert.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
+<!-- JQuery and Bootstrap Scripts Loading -->
+<script src="<?php echo constant; ?>assets/jQuery/jquery-3.5.1.js"></script>
+<script src="<?php echo constant; ?>assets/bootstrap/js/bootstrap.js"></script>
+<script src="<?php echo constant; ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo constant; ?>assets/sweetalert/sweetalert.min.js"></script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="topmenu1">
+    <a class="navbar-brand" href="<?php echo constant; ?>">Cepjeff - Suyoto</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/jadwaldokter">Jadwal Dokter </a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/ambilantrian" >Tambah Antrean </a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/ambilantrianfarmasi">Tambah Antrean Farmasi </a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/updateadminis">Update Admisi</a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/updateantreanpoli">Update Poli</a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/updateantreanfarmasi">Update Farmasi</a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/getlistid">Get Task ID</a>
+          <a class="nav-item nav-link" href="<?php echo constant; ?>antrean/nonbpjs">Non BPJS</a>
+      </div>
+    </div>
+</nav>
+
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="card card-stats ml-4 mt-2 mb-3 p-3">
+                <div style="padding-top:40px;color:#7209b7;font-size:32px;">INSERT ANTREAN</div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Kode Booking</span>
+                    </div>
+                    <input type="text" class="form-control" id="kodebooking" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Jenis Pasien</span>
+                    </div>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="jenispasien">
+                        <option value=" " selected>Please Choose..</option>
+                        <option value="JKN">1. JKN</option>
+                        <option value="NON JKN">2. NON JKN</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">No. Kartu BPJS</span>
+                    </div>
+                    <input type="text" class="form-control" id="nomorkartu" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">NIK</span>
+                    </div>
+                    <input type="text" class="form-control" id="nik" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">No. HP</span>
+                    </div>
+                    <input type="text" class="form-control" id="nohp" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Kode Poli</span>
+                    </div>
+                    <input type="text" class="form-control" id="kodepoli" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Nama Poli</span>
+                    </div>
+                    <input type="text" class="form-control" id="namapoli" aria-describedby="basic-addon3">
+                
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Pasien Baru ?</span>
+                    </div>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="pasienbaru">
+                        <option value=" " selected>Please Choose..</option>
+                        <option value="1">1. Ya</option>
+                        <option value="0">0. Tidak</option>
+                    </select>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">No. RM</span>
+                    </div>
+                    <input type="text" class="form-control" id="norm" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Tanggal Periksa</span>
+                    </div>
+                    <input type="date" class="form-control" id="tanggalperiksa" aria-describedby="basic-addon3" readonly>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">Kode Dokter</span>
+                    </div>
+                    <input type="text" class="form-control" id="kodedokter" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">Nama Dokter</span>
+                    </div>
+                    <input type="text" class="form-control" id="namadokter" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">Jam Praktek</span>
+                    </div>
+                    <input type="text" class="form-control" id="jampraktek" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Jenis Kunjungan</span>
+                    </div>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="jeniskunjungan">
+                        <option value=" " selected>Please Choose..</option>
+                        <option value="1">1. Rujukan FKTP</option>
+                        <option value="2">2. Rujukan Internal</option>
+                        <option value="3">3. Kontrol</option>
+                        <option value="4">4. Rujukan Antar RS</option>
+
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">No. Referensi</span>
+                    </div>
+                    <input type="text" class="form-control" id="nomorreferensi" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">No. Antrean</span>
+                    </div>
+                    <input type="text" class="form-control" id="nomorantrean" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white " id="basic-addon3">Angka Antrean</span>
+                    </div>
+                    <input type="text" class="form-control" id="angkaantrean" aria-describedby="basic-addon3">
+                </div>
+
+                
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Estimasi Dilayani</span>
+                    </div>
+                    <input type="text" class="form-control" id="estimasidilayani" aria-describedby="basic-addon3" value="{strtotime($date)*1000;}" readonly >
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Sisa Kuota JKN</span>
+                    </div>
+                    <input type="text" class="form-control" id="sisakuotajkn" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Kuota JKN</span>
+                    </div>
+                    <input type="text" class="form-control" id="kuotajkn" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Sisa Kuota Non JKN</span>
+                    </div>
+                    <input type="text" class="form-control" id="sisakuotanonjkn" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Kuota Non JKN</span>
+                    </div>
+                    <input type="number" class="form-control" id="kuotanonjkn" aria-describedby="basic-addon3">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-primary text-white" id="basic-addon3">Keterangan</span>
+                    </div>
+                    <input type="text" class="form-control" id="keterangan" aria-describedby="basic-addon3">
+                </div>
+
+                <div>
+                    <div class="row justify-content-center">
+                        <div class="col"></div>
+                        <div class="col"><button class="btn btn-success" id="btninsert">Add Antrean</button></div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+                <div class="mt-4" id="tabeldetail"></div>
+            </div>
+        </div>
+        <div class="col-sm-6 ">
+            <div class="card mt-2 mb-3 p-3 mr-3 border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Search Detail</h5>
+                    <div id="tablesearch"  class="table-responsive">
+
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    /*-----------------------------------------
+Created by  : Ary H 
+Project     : ANTREAN ONLINE
+Date        : MAY 4,2023
+-----------------------------------------*/
+
+//main
+$(document).ready(function () {
+    var flas='new';
+    $("#tanggalperiksa").val(new Date().toISOString().split('T')[0]);
+
+    $("#nik").click(function(){
+        $('#tablesearch').load('http://vclaim.klinik-annisaa.local/peserta/index.php');
+       // $('#tablesearch').children('topmenu1').css('visibility','hidden');
+    });
+    $("#nik").focus(function(){
+        $('#tablesearch').load('http://vclaim.klinik-annisaa.local/peserta/index.php');
+       // $('#tablesearch').children('topmenu1').css('visibility','hidden');
+    });
+
+    $('#kodepoli').click(function(){
+        $('#tablesearch').load('poli.php');
+    })
+
+    $('#kodepoli').focus(function(){
+        $('#tablesearch').load('poli.php');
+    })
+
+    $('#kodedokter').focus(function(){
+        $('#tablesearch').load('timetabledoctors.php');
+    })
+    $('#kodedokter').click(function(){
+        $('#tablesearch').load('timetabledoctors.php');
+    })
+    
+         
+        $("#btninsert").click(function(){
+            var kodebooking = $("#kodebooking").val();
+            var jenispasien = $("#jenispasien").val();
+            var nomorkartu = $("#nomorkartu").val();
+            var nik = $("#nik").val();
+            var nohp = $("#nohp").val();
+            var kodepoli = $("#kodepoli").val();
+            var namapoli = $("#namapoli").val();
+            var pasienbaru = $("#pasienbaru").val();
+            var norm = $("#norm").val();
+            var tanggalperiksa = $("#tanggalperiksa").val();
+            var kodedokter = $("#kodedokter").val();
+            var namadokter = $("#namadokter").val();
+            var jampraktek = $("#jampraktek").val();
+            var jeniskunjungan = $("#jeniskunjungan").val();
+            var nomorreferensi = $("#nomorreferensi").val();
+            var nomorantrean = $("#nomorantrean").val();
+            var angkaantrean = $("#angkaantrean").val();
+            var estimasidilayani = $("#estimasidilayani").val();
+            var sisakuotajkn = $("#sisakuotajkn").val();
+            var kuotajkn = $("#kuotajkn").val();
+            var sisakuotanonjkn = $("#sisakuotanonjkn").val();
+            var kuotanonjkn= $("#kuotanonjkn").val();
+            var keterangan = $("#keterangan").val();
+           
+          
+            //check logging
+            console.log(kodebooking);
+            console.log(jenispasien); 
+            console.log(nomorkartu); 
+            console.log(nik);
+            console.log(nohp); 
+            console.log(kodepoli); 
+            console.log(namapoli); 
+            console.log(pasienbaru); 
+            console.log(norm);
+            console.log(tanggalperiksa); 
+            console.log(kodedokter); 
+            console.log(namadokter); 
+            console.log(jampraktek);
+            console.log(jeniskunjungan);
+            console.log(nomorreferensi);
+            console.log(nomorantrean);
+            console.log(angkaantrean); 
+            console.log(estimasidilayani);
+            console.log(sisakuotajkn);
+            console.log(kuotajkn); 
+            console.log(sisakuotanonjkn);
+            console.log(kuotanonjkn);
+            console.log(keterangan); 
+            
+          $.ajax({
+                type: "POST",
+                url: "../assets/scripts/ajax/addantrean.php",
+                data: "kodebooking=" +  kodebooking +
+                         "&jenispasien=" + jenispasien +
+                         "&nomorkartu=" + nomorkartu +
+                         "&nik="+ nik +
+                         "&nohp=" + nohp +
+                         "&kodepoli=" + kodepoli +
+                         "&namapoli=" + namapoli +
+                         "&pasienbaru=" + pasienbaru +
+                         "&norm=" + norm +
+                         "&tanggalperiksa=" + tanggalperiksa +
+                         "&kodedokter=" + kodedokter +
+                         "&namadokter=" + namadokter +
+                         "&jampraktek=" + jampraktek +
+                         "&jeniskunjungan=" + jeniskunjungan +
+                         "&nomorreferensi=" + nomorreferensi +
+                         "&nomorantrean=" + nomorantrean + 
+                         "&angkaantrean=" + angkaantrean +
+                         "&estimasidilayani=" + estimasidilayani +
+                         "&sisakuotajkn=" + sisakuotajkn +
+                         "&kuotajkn=" + kuotajkn +
+                         "&sisakuotanonjkn=" + sisakuotanonjkn +
+                         "&kuotanonjkn=" + kuotanonjkn +
+                         "&keterangan=" + keterangan,
+                         
+                
+                success: function (response) {
+                    console.log(response);
+                    $("#tabeldetail").html("");
+                    $("#tabeldetail").html(response);
+                    $("#tabeldetail").show();
+                }
+            });
+        })
+});
+
+</script>
+</html>
